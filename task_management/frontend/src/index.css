@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 400px;
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.task-input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.task-button {
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: block;
+    margin: 10px auto 0;
+}
+
+.task-button.add {
+    background-color: #3b82f6;
+}
+
+.task-button.add:hover {
+    background-color: #2563eb;
+}
+
+.task-button.update {
+    background-color: #f59e0b;
+}
+
+.task-button.update:hover {
+    background-color: #d97706;
+}
+
+.task-button.cancel {
+    background-color: #ef4444;
+}
+
+.task-button.cancel:hover {
+    background-color: #dc2626;
+}
+
+.task-section-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #d1d5db;
+    padding-bottom: 4px;
+}
+
+.task-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-title span {
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.task-item {
+    background-color: #e5e7eb;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.task-title-left {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.edit-icon {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    color: #4b5563;
+    margin-left: 4px;
+}
+
+.task-title-right {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.check-icon,
+.x-icon {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.check-icon {
+    color: #16a34a;
+}
+
+.x-icon {
+    color: #dc2626;
+}
+
+
+.task-date {
+    font-size: 12px;
+    color: #6b7280;
+    text-align: left;
+}
+
+.task-item.completed .task-title-left span {
+    text-decoration: line-through;
+    color: #6b7280;
+}
