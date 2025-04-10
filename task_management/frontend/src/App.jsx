@@ -8,7 +8,7 @@ function App() {
     const [editTask, setEditTask] = useState(null);
 
     useEffect(() => {
-        fetch("http://laravel-app:8000/api/tasks")
+        fetch("http://localhost:8000/api/tasks")
             .then((res) => res.json())
             .then((data) => {
                 const merged = [...data.pending, ...data.completed].map(
@@ -26,8 +26,8 @@ function App() {
     const addTask = (task) => {
         const method = editTask ? "PUT" : "POST";
         const url = editTask
-            ? `http://laravel-app:8000/api/tasks/${editTask.id}`
-            : "http://laravel-app:8000/api/tasks";
+            ? `http://localhost:8000/api/tasks/${editTask.id}`
+            : "http://localhost:8000/api/tasks";
 
         fetch(url, {
             method,
@@ -46,7 +46,7 @@ function App() {
     };
 
     const deleteTask = (id) => {
-        fetch(`http://laravel-app:8000/api/tasks/${id}`, {
+        fetch(`http://localhost:8000/api/tasks/${id}`, {
             method: "DELETE",
         }).then(() => setTasks(tasks.filter((t) => t.id !== id)));
     };
@@ -55,7 +55,7 @@ function App() {
         const updatedTask = tasks.find((task) => task.id === id);
         const newCompletedStatus = !updatedTask.completed;
 
-        fetch(`http://laravel-app:8000/api/tasks/${id}`, {
+        fetch(`http://localhost:8000/api/tasks/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
